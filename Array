@@ -1,0 +1,41 @@
+using System;
+
+namespace AssignmentApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // first we create array of size 10
+            int[] numbers = new int[10];
+            //then we create random object which will give us random 10 numbers
+            Random rnd = new Random();
+            //declaring two variable for storing min and max values
+            int min, max;
+            // here we create loop which will displaly array numbers
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = rnd.Next(1, 100);
+                Console.WriteLine(numbers[i]);
+            }
+            //here we assign the variable max and min to the first number to the array
+            min = numbers[0];
+            max = numbers[0];
+
+            //here we create loop and if condition to find min and max value to the number in array
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (min > numbers[i])
+                    min = numbers[i];
+                if (max < numbers[i])
+                    max = numbers[i];
+            }
+
+            // here we print min and max value in array
+            Console.WriteLine("=====================================");
+            Console.WriteLine("The highest number in the array: > > > " + max);
+            Console.WriteLine("The lowest number in the array: > > > " + min);
+            Console.ReadKey();
+        }
+    }
+}
